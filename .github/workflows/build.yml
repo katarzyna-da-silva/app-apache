@@ -11,14 +11,19 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '14'
+      - name: List directory contents
+        run: ls -l
+
+      - name: Debug info
+        run: |
+          pwd
+          echo "Contents of app-apache:"
+          ls -l app-apache
 
       - name: Deploy to EC2
         run: |
-           cd app-apache
-           ./script.sh
+          cd app-apache
+          chmod +x script.sh  # Ensure script.sh is executable
+          ./script.sh
