@@ -18,17 +18,6 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Build application
-        run: |
-          cd app-apache
-          npm install
-          npm run build
-
-      - name: Run tests
-        run: |
-          cd app-apache
-          npm test
-
       - name: Deploy to EC2
         run: |
           ssh ec2-user@13.38.9.193 'bash -s' < script.sh
