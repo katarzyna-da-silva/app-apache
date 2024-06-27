@@ -18,18 +18,16 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install dependencies
+      - name: Install dependencies and build application
         run: |
+          cd app-apache
           npm install
-
-      - name: Change directory to app-apache
-        run: cd app-apache
-
-      - name: Build application
-        run: npm run build
+          npm run build
 
       - name: Run tests
-        run: npm test
+        run: |
+          cd app-apache
+          npm test
 
       - name: Deploy to EC2
         run: |
