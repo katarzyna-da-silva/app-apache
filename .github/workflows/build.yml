@@ -19,11 +19,11 @@ jobs:
       - name: Debug info
         run: |
           pwd
-          echo "Contents of app-apache:"
+          echo "Zawartość katalogu app-apache:"
           ls -l app-apache
 
       - name: Deploy to EC2
         run: |
-          cd app-apache
-          chmod +x script.sh  # Ensure script.sh is executable
+          cd app-apache  # Dostosowano do poprawnego poziomu katalogu
+          chmod +x script.sh  # Upewnij się, że script.sh ma odpowiednie uprawnienia
           ./script.sh
