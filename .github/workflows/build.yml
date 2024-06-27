@@ -20,4 +20,5 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh ec2-user@13.38.9.193 'bash -s' < script.sh
+           cd app-apache
+           ./script.sh
