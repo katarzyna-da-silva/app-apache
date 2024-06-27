@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       - name: List directory contents
         run: ls -l
@@ -19,11 +19,11 @@ jobs:
       - name: Debug info
         run: |
           pwd
-          echo "app-apache:"
+          echo "Contents of app-apache:"
           ls -l app-apache
 
       - name: Deploy to EC2
         run: |
-          cd app-apache 
-          chmod +x script.sh  
+          cd app-apache
+          chmod +x script.sh
           ./script.sh
