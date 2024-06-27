@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: List directory contents
         run: ls -l
@@ -19,11 +19,11 @@ jobs:
       - name: Debug info
         run: |
           pwd
-          echo "Zawartość katalogu app-apache:"
+          echo "app-apache:"
           ls -l app-apache
 
       - name: Deploy to EC2
         run: |
-          cd app-apache  # Dostosowano do poprawnego poziomu katalogu
-          chmod +x script.sh  # Upewnij się, że script.sh ma odpowiednie uprawnienia
+          cd app-apache 
+          chmod +x script.sh  
           ./script.sh
