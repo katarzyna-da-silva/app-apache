@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install dependencies and build application
+      - name: Build application
         run: |
           cd app-apache
           npm install
