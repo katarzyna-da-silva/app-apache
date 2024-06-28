@@ -1,15 +1,13 @@
 #!/bin/bash
 
-# Mise à jour du système
 sudo apt update -y
 
-# Installation
-sudo apt install -y httpd
 
-# Démarrage du service Apache
-sudo systemctl start httpd
+sudo apt install -y apache2
 
-# Activation 
-sudo systemctl enable httpd
 
-echo "Installation et configuration d'Apache terminées."
+sudo systemctl start apache2
+
+sudo systemctl enable apache2
+
+echo "Ok."
