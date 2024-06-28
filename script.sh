@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Mise à jour du système
-sudo yum update -y
+sudo apt update -y
 
 # Installation
-sudo yum install -y httpd
+sudo apt install -y httpd
 
 # Démarrage du service Apache
 sudo systemctl start httpd
